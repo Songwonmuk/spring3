@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>목록보기</title>
+<link rel="stylesheet" th:href="@{/css/select.css}">
+<script defer th:src="@{/js/select.js}"></script>
+</head>
+<body>
+	<h3>전체 목록</h3>
+	<table style="border: 1px solid black">
+		<thead style="border: 1px solid black">
+			<tr>
+				<th style="border: 1px solid black">이름</th>			
+				<th style="border: 1px solid black">나이</th>
+				<th style="border: 1px solid black">수정</th>
+				<th style="border: 1px solid black">삭제</th>
+			</tr>
+		</thead>
+		<tbody  th:each="item : ${list}" >
+			<tr>
+				<td style="border: 1px solid black"><span th:text="${item.name}"></span></td>
+				<td style="border: 1px solid black"><span th:text="${item.age}"></span></td>
+				<td style="border: 1px solid black"><input type="button" value="수정" id="update"></td>
+				<td style="border: 1px solid black"><input type="button" value="삭제" id="delete"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
